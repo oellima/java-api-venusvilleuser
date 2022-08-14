@@ -13,12 +13,10 @@ import java.util.List;
 @NoArgsConstructor
 @Entity
 public class Usuario implements Serializable {
-
     private static final long serialVersionUID = 1L;
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
+    private Long id;
     private String nome;
 
     @JsonFormat(pattern = "dd/MM/yyyy")
@@ -28,7 +26,6 @@ public class Usuario implements Serializable {
 
     @OneToMany(fetch = FetchType.LAZY, cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REMOVE})
     private List<Telefone> telefones;
-
     @OneToMany(fetch = FetchType.LAZY, cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REMOVE})
     private List<Post> posts;
 

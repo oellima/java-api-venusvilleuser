@@ -10,17 +10,15 @@ import javax.persistence.*;
 @NoArgsConstructor
 @Entity
 public class Post {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
-
+    private Long id;
     @Enumerated(EnumType.STRING)
     private Anexo anexo;
-    private String textPost;
+    private String textoPost;
 
-    public Post(Anexo anexo, String textPost) {
+    public Post(Anexo anexo, String textoPost) {
         this.anexo = anexo;
-        this.textPost = textPost;
+        this.textoPost = textoPost;
     }
 }
